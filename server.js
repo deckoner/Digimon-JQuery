@@ -1,14 +1,16 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+import { App } from '@tinyhttp/app';
+import sirv from 'sirv';
 
-// Sirve los archivos estáticos desde la carpeta 'public'
-app.use(express.static('public'));
+const app = new App();
 
+// Sirve archivos estáticos desde la carpeta 'public'
+app.use(sirv('public'));
+
+// Maneja las solicitudes de rutas específicas
 app.get('/', (req, res) => {
- res.sendFile(__dirname + '/public/index.html');
+ res.sendFile('public/index.html');
 });
 
-app.listen(port, () => {
- console.log(`Server running at http://localhost:${port}/`);
+app.listen(3000, () => {
+ console.log('Server is running on http://localhost:3000');
 });
