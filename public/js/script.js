@@ -5,25 +5,29 @@ const digimonDiccionario = [];
 async function fetchPage(page) {
     const url = `${digimonListEndpoint}?page=${page}`;
 
-    fetch(url, { priority: "high" })
+    fetch(url)
         .then((response) => response.json())
         .then((data) => {
             if (Array.isArray(data.content)) {
                 data.content.forEach((digimon) => {
                     digimonDiccionario[digimon.name] = digimon.id;
+                    console.log(digimon.name);
                 });
 
                 // Verificar si hay más páginas y hacer la llamada recursiva
                 if (page < data.pageable.totalPages - 1) {
                     fetchPage(page + 1);
                 } else {
+                    console.log("Entro en este else");
                     return true;
                 }
             } else {
+                console.log("Entro en el primer error");
                 return false;
             }
-        })
+        }) // Aquí faltaba una llave de cierre
         .catch((error) => {
+            console.log("Todo ha fallado");
             return false;
         });
 }

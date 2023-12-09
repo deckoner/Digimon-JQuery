@@ -1,0 +1,22 @@
+D:.
+│   .gitignore
+│   package.json
+│   pnpm-lock.yaml
+│   README.md
+│   server.js
+│
+└───public
+    │   index.html
+    │
+    ├───css
+    │       animaciones.css
+    │       style.css
+    │
+    ├───img
+    │       favicon.ico
+    │
+    └───js
+        │   script.js
+        │
+        └───dependencias
+                jquery-3.7.1.min.js
