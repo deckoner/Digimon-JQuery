@@ -20,7 +20,6 @@ async function fetchPage(page) {
             return true;
         }
     } else {
-        console.log("Entro en el primer error");
         return false;
     }
   }
