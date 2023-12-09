@@ -1,16 +1,15 @@
-import { App } from '@tinyhttp/app';
-import sirv from 'sirv';
+import express from 'express';
+import path from 'path';
 
-const app = new App();
+const app = express();
 
-// Sirve archivos estáticos desde la carpeta 'public'
-app.use(sirv('public'));
+// Servir archivos estáticos desde la carpeta 'public'
+app.use(express.static(path.join(process.cwd(), 'public')));
 
-// Maneja las solicitudes de rutas específicas
+// Mostrar el archivo index.html cuando se accede a la raíz del servidor
 app.get('/', (req, res) => {
- res.sendFile('public/index.html');
+  res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });
 
-app.listen(3000, () => {
- console.log('Server is running on http://localhost:3000');
-});
+// Escuchar en el puerto 3000
+app.listen(3000, () => console.log('El servidor está escuchando en el puerto 3000 http://localhost:3000'));
