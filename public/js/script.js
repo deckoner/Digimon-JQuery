@@ -11,7 +11,6 @@ async function fetchPage(page) {
             if (Array.isArray(data.content)) {
                 data.content.forEach((digimon) => {
                     digimonDiccionario[digimon.name] = digimon.id;
-                    console.log(digimon.name);
                 });
 
                 // Verificar si hay más páginas y hacer la llamada recursiva
