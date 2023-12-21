@@ -1,86 +1,42 @@
 :root {
-  --azul-transp: #36c8ec62;
-  --naranja: #e07935;
-  --colorTexto: #fff;
+  --texto: #fff;
+  --azul1: #37435D;
+  --azul2: #42466B;
+  --azul3: #2B324E;
+  --acentuado: #E9BD90;
+  --fondo: #121F2F;
 }
 
 * {
-  color: var(--colorTexto);
+  color: var(--texto);
+}
+
+p, a {
+  font-size: 1.8em;
 }
 
 body {
-  padding: 0;
-  margin: 0;
+  background-color: var(--fondo);
+
+  padding: 1em;
 }
 
-main {
+header {
   display: flex;
-  flex-direction: column;
-}
-
-nav {
-  background-color: black;
-
-  margin-bottom: 0;
-  padding-bottom: 0;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-nav > h1 {
-  font-size: 1.4em;
-  text-decoration: underline;
-
-  height: 100%;
-  width: 25%;
-
-  padding-left: 0.3em;
-}
-
-nav > section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content:flex-end;
   align-items: center;
 
-  width: 75%;
-
-  padding-right: 1em;
 }
 
-nav > section > a {
-  font-size: 1.2em;
+header > div:first-child{
+  width: 70%;
 }
 
-header {
-  background-image: url("../img/TunedIn_BooksfromtheBanner_large.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;   
-  
-  height: 15em;
-
-  margin-top: 0;
-  padding-top: 0;
+header > div:last-child {
+  width: 30%;
 }
 
-header {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-header > h1 {
+.titulo-pagina {
   font-size: 3em;
 
   margin-bottom: 0;
-}
-
-header > p {
-  font-size: 1em;
-
-  width: 30%;
-
-  margin-top: 0;
 }
